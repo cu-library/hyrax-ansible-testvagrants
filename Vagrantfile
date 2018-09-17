@@ -9,8 +9,15 @@ Vagrant.configure("2") do |config|
     centos.vm.provision "shell", inline: <<-SHELL
       yum -y update
       yum -y install git ansible
-      git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
+      if [ -d "/home/vagrant/hyrax-ansible" ]
+      then
+          pushd /home/vagrant/hyrax-ansible; git pull; popd
+      else
+          git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
+      fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
+      cd /home/vagrant/hyrax-ansible
+      ansible-playbook install_hyrax_on_localhost.yml
     SHELL
   end
 
@@ -24,8 +31,15 @@ Vagrant.configure("2") do |config|
       apt-add-repository -y ppa:ansible/ansible
       apt-get update
       apt-get install -y git ansible
-      git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
+      if [ -d "/home/vagrant/hyrax-ansible" ]
+      then
+          pushd /home/vagrant/hyrax-ansible; git pull; popd
+      else
+          git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
+      fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
+      cd /home/vagrant/hyrax-ansible
+      ansible-playbook install_hyrax_on_localhost.yml
     SHELL
   end
 
@@ -38,8 +52,15 @@ Vagrant.configure("2") do |config|
       apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
       apt-get update
       apt-get install -y git ansible
-      git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
+      if [ -d "/home/vagrant/hyrax-ansible" ]
+      then
+          pushd /home/vagrant/hyrax-ansible; git pull; popd
+      else
+          git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
+      fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
+      cd /home/vagrant/hyrax-ansible
+      ansible-playbook install_hyrax_on_localhost.yml
     SHELL
   end
 
