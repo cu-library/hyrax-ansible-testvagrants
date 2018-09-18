@@ -37,10 +37,10 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision "shell", inline: <<-SHELL
       echo 'set grub-pc/install_devices /dev/sda' | debconf-communicate
       apt-get update && apt-get upgrade -y
-      apt-get install -y software-properties-common
+      apt-get install -y software-properties-common git curl
       apt-add-repository -y ppa:ansible/ansible
       apt-get update
-      apt-get install -y git ansible
+      apt-get install -y ansible
       if [ -d "/home/vagrant/hyrax-ansible" ]
       then
           pushd /home/vagrant/hyrax-ansible; git pull; popd
@@ -64,11 +64,11 @@ Vagrant.configure("2") do |config|
     end
     debian.vm.provision "shell", inline: <<-SHELL
       apt-get update && apt-get upgrade -y
-      apt-get -y install dirmngr gpg
+      apt-get install -y dirmngr gpg curl git
       grep -q -F 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main' /etc/apt/sources.list || echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main' >> /etc/apt/sources.list
       apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
       apt-get update
-      apt-get install -y git ansible
+      apt-get install -y ansible
       if [ -d "/home/vagrant/hyrax-ansible" ]
       then
           pushd /home/vagrant/hyrax-ansible; git pull; popd
