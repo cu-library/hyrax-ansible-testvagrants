@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.define "centos" do |centos|
-    centos.vm.box = "geerlingguy/centos7"
+    centos.vm.box = "centos/7"
     centos.vm.network "forwarded_port", guest: 80, host: 8080
     centos.vm.network "forwarded_port", guest: 8080, host: 8081
     centos.vm.provider "virtualbox" do |v|
@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "ubuntu" do |ubuntu|
-    ubuntu.vm.box = "geerlingguy/ubuntu1804"
+    ubuntu.vm.box = "ubuntu/bionic64"
     ubuntu.vm.network "forwarded_port", guest: 80, host: 8082
     ubuntu.vm.network "forwarded_port", guest: 8080, host: 8083
     ubuntu.vm.provider "virtualbox" do |v|
@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "debian" do |debian|
-    debian.vm.box = "geerlingguy/debian9"
+    debian.vm.box = "debian/stretch64"
     debian.vm.network "forwarded_port", guest: 80, host: 8084
     debian.vm.network "forwarded_port", guest: 8080, host: 8085
     debian.vm.provider "virtualbox" do |v|
@@ -64,6 +64,7 @@ Vagrant.configure("2") do |config|
     end
     debian.vm.provision "shell", inline: <<-SHELL
       apt-get update && apt-get upgrade -y
+      apt-get -y install dirmngr gpg
       grep -q -F 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main' /etc/apt/sources.list || echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main' >> /etc/apt/sources.list
       apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
       apt-get update
