@@ -6,14 +6,17 @@ Running this Vagrantfile will use 6144 MB of RAM. At least 8 GB of RAM on the ho
 ## CentOS:
 
 Guest: 80 ->, host: http://localhost:8080
+
 Guest: 8080 -> host: http://localhost:8081
 
 ## Ubuntu:
 
 Guest: 80 ->, host: http://localhost:8082
+
 Guest: 8080 -> host: http://localhost:8083
 
 ## Debian:
 
 Guest: 80 ->, host: http://localhost:8084
+
 Guest: 8080 -> host: http://localhost:8085
