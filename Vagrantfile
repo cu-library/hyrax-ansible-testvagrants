@@ -25,6 +25,12 @@ Vagrant.configure("2") do |config|
       /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
+      sudo systemctl status postgresql
+      sudo systemctl status tomcat
+      sudo systemctl status redis
+      sudo systemctl status nginx
+      sudo systemctl status solr
+      node -v
     SHELL
   end
 
@@ -55,6 +61,12 @@ Vagrant.configure("2") do |config|
       /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
+      sudo systemctl status postgresql
+      sudo systemctl status tomcat8
+      sudo systemctl status redis
+      sudo systemctl status nginx
+      sudo systemctl status solr
+      node -v
     SHELL
   end
 
@@ -84,6 +96,12 @@ Vagrant.configure("2") do |config|
       /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
+      sudo systemctl status postgresql
+      sudo systemctl status tomcat8
+      sudo systemctl status redis
+      sudo systemctl status nginx
+      sudo systemctl status solr
+      node -v
     SHELL
   end
 
