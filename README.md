@@ -5,24 +5,27 @@ Running this Vagrantfile will use 6144 MB of RAM. At least 8 GB of RAM on the ho
 
 ## CentOS:
 
-Guest: 80 ->, host: http://localhost:8080<br/>
-Guest: 8080 -> host: http://localhost:8081
+Guest: 80 -> host: http://localhost:8080<br/>
+Guest: 8080 -> host: http://localhost:8081<br/>
+Guest: 8983 -> host: http://localhost:8082
 
 http://localhost:8081/manager<br/>
 http://localhost:8081/fcrepo
 
 ## Ubuntu:
 
-Guest: 80 ->, host: http://localhost:8082<br/>
-Guest: 8080 -> host: http://localhost:8083
+Guest: 80 ->, host: http://localhost:8180<br/>
+Guest: 8080 -> host: http://localhost:8181<br/>
+Guest: 8983 -> host: http://localhost:8182
 
-http://localhost:8083/manager<br/>
-http://localhost:8083/fcrepo
+http://localhost:8181/manager<br/>
+http://localhost:8181/fcrepo
 
 ## Debian:
 
-Guest: 80 ->, host: http://localhost:8084<br/>
-Guest: 8080 -> host: http://localhost:8085
+Guest: 80 ->, host: http://localhost:8280<br/>
+Guest: 8080 -> host: http://localhost:8281<br/>
+Guest: 8983 -> host: http://localhost:8282
 
-http://localhost:8085/manager<br/>
-http://localhost:8085/fcrepo
+http://localhost:8281/manager<br/>
+http://localhost:8281/fcrepo

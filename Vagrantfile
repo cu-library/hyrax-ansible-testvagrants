@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
     centos.vm.box = "centos/7"
     centos.vm.network "forwarded_port", guest: 80, host: 8080
     centos.vm.network "forwarded_port", guest: 8080, host: 8081
+    centos.vm.network "forwarded_port", guest: 8983, host: 8082
     centos.vm.provider "virtualbox" do |v|
         v.memory = 2048
     end
@@ -29,8 +30,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box = "ubuntu/bionic64"
-    ubuntu.vm.network "forwarded_port", guest: 80, host: 8082
-    ubuntu.vm.network "forwarded_port", guest: 8080, host: 8083
+    ubuntu.vm.network "forwarded_port", guest: 80, host: 8180
+    ubuntu.vm.network "forwarded_port", guest: 8080, host: 8181
+    ubuntu.vm.network "forwarded_port", guest: 8983, host: 8182
     ubuntu.vm.provider "virtualbox" do |v|
         v.memory = 2048
         v.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
@@ -58,8 +60,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "debian" do |debian|
     debian.vm.box = "debian/stretch64"
-    debian.vm.network "forwarded_port", guest: 80, host: 8084
-    debian.vm.network "forwarded_port", guest: 8080, host: 8085
+    debian.vm.network "forwarded_port", guest: 80, host: 8280
+    debian.vm.network "forwarded_port", guest: 8080, host: 8281
+    debian.vm.network "forwarded_port", guest: 8983, host: 8282
     debian.vm.provider "virtualbox" do |v|
         v.memory = 2048
     end
