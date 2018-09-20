@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.network "forwarded_port", guest: 8080, host: 8083
     ubuntu.vm.provider "virtualbox" do |v|
         v.memory = 2048
+        v.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
     end
     ubuntu.vm.provision "shell", inline: <<-SHELL
       echo 'set grub-pc/install_devices /dev/sda' | debconf-communicate
