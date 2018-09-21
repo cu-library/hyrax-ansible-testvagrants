@@ -22,7 +22,6 @@ Vagrant.configure("2") do |config|
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
       chmod u+x /home/vagrant/hyrax-ansible/prepare.sh
-      /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
@@ -70,7 +69,6 @@ Vagrant.configure("2") do |config|
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
       chmod u+x /home/vagrant/hyrax-ansible/prepare.sh
-      /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
@@ -117,7 +115,6 @@ Vagrant.configure("2") do |config|
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
       chmod u+x /home/vagrant/hyrax-ansible/prepare.sh
-      /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
