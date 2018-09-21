@@ -25,11 +25,23 @@ Vagrant.configure("2") do |config|
       /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
+      echo ""
+      echo "---> PostgreSQL Status"
       sudo systemctl status postgresql
+      echo ""
+      echo "---> Tomcat Status"
       sudo systemctl status tomcat
+      echo ""
+      echo "---> Redis Status"
       sudo systemctl status redis
+      echo ""
+      echo "---> Nginx Status"
       sudo systemctl status nginx
+      echo ""
+      echo "---> Solr Status"
       sudo systemctl status solr
+      echo ""
+      echo "---> Node version"
       node -v
     SHELL
   end
@@ -61,11 +73,23 @@ Vagrant.configure("2") do |config|
       /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
+      echo ""
+      echo "---> PostgreSQL Status"
       sudo systemctl status postgresql
+      echo ""
+      echo "---> Tomcat Status"
       sudo systemctl status tomcat8
+      echo ""
+      echo "---> Redis Status"
       sudo systemctl status redis
+      echo ""
+      echo "---> Nginx Status"
       sudo systemctl status nginx
+      echo ""
+      echo "---> Solr Status"
       sudo systemctl status solr
+      echo ""
+      echo "---> Node version"
       node -v
     SHELL
   end
@@ -96,11 +120,23 @@ Vagrant.configure("2") do |config|
       /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
+      echo ""
+      echo "---> PostgreSQL Status"
       sudo systemctl status postgresql
+      echo ""
+      echo "---> Tomcat Status"
       sudo systemctl status tomcat8
+      echo ""
+      echo "---> Redis Status"
       sudo systemctl status redis
+      echo ""
+      echo "---> Nginx Status"
       sudo systemctl status nginx
+      echo ""
+      echo "---> Solr Status"
       sudo systemctl status solr
+      echo ""
+      echo "---> Node version"
       node -v
     SHELL
   end
