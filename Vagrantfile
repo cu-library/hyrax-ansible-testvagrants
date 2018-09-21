@@ -21,7 +21,6 @@ Vagrant.configure("2") do |config|
           git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
-      chmod u+x /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
@@ -70,7 +69,6 @@ Vagrant.configure("2") do |config|
           git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
-      chmod u+x /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
@@ -118,7 +116,6 @@ Vagrant.configure("2") do |config|
           git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
-      chmod u+x /home/vagrant/hyrax-ansible/prepare.sh
       cd /home/vagrant/hyrax-ansible
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
