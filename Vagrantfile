@@ -42,6 +42,8 @@ Vagrant.configure("2") do |config|
       echo ""
       echo "---> Node version"
       node -v
+      echo "---> Ruby version"
+      ruby -v
     SHELL
   end
 
@@ -89,6 +91,8 @@ Vagrant.configure("2") do |config|
       echo ""
       echo "---> Node version"
       node -v
+      echo "---> Ruby version"
+      ruby -v
     SHELL
   end
 
@@ -135,6 +139,8 @@ Vagrant.configure("2") do |config|
       echo ""
       echo "---> Node version"
       node -v
+      echo "---> Ruby version"
+      ruby -v
     SHELL
   end
 
