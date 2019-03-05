@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
     centos.vm.network "forwarded_port", guest: 8983, host: 8082
     centos.vm.provider "virtualbox" do |v|
         v.memory = 2048
+        v.cpus = 2
     end
     centos.vm.provision "shell", inline: <<-SHELL
       yum -y update
@@ -55,6 +56,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provider "virtualbox" do |v|
         v.memory = 2048
         v.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+        v.cpus = 2
     end
     ubuntu.vm.provision "shell", inline: <<-SHELL
       echo 'set grub-pc/install_devices /dev/sda' | debconf-communicate
@@ -103,6 +105,7 @@ Vagrant.configure("2") do |config|
     debian.vm.network "forwarded_port", guest: 8983, host: 8282
     debian.vm.provider "virtualbox" do |v|
         v.memory = 2048
+        v.cpus = 2
     end
     debian.vm.provision "shell", inline: <<-SHELL
       apt-get update && apt-get upgrade -y
