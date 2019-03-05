@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
       cd /home/vagrant/hyrax-ansible
+      ansible-galaxy install -r requirements.yml
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
       echo "---> PostgreSQL Status"
@@ -70,6 +71,7 @@ Vagrant.configure("2") do |config|
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
       cd /home/vagrant/hyrax-ansible
+      ansible-galaxy install -r requirements.yml
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
       echo "---> PostgreSQL Status"
@@ -117,6 +119,7 @@ Vagrant.configure("2") do |config|
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
       cd /home/vagrant/hyrax-ansible
+      ansible-galaxy install -r requirements.yml
       ansible-playbook install_hyrax_on_localhost.yml
       echo ""
       echo "---> PostgreSQL Status"
