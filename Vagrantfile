@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  
+
   config.vm.define "centos7" do |centos|
     centos.vm.box = "centos/7"
     centos.vm.network "forwarded_port", guest: 80, host: 8080
@@ -73,9 +73,9 @@ Vagrant.configure("2") do |config|
       fi
       chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
       cd /home/vagrant/hyrax-ansible
-      ansible-galaxy collection install -r requirements.yml
-      ansible-galaxy role install -r requirements.yml
-      ansible-playbook install_hyrax_on_localhost.yml
+      /usr/local/bin/ansible-galaxy collection install -r requirements.yml
+      /usr/local/bin/ansible-galaxy role install -r requirements.yml
+      /usr/local/bin/ansible-playbook install_hyrax_on_localhost.yml
       echo ""
       echo "---> PostgreSQL Status"
       sudo systemctl status postgresql
