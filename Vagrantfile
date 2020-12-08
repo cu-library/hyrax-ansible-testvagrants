@@ -62,8 +62,8 @@ Vagrant.configure("2") do |config|
     centos.vm.provision "shell", inline: <<-SHELL
       yum -y update
       yum -y install epel-release
-      yum -y install git python-pip
-      pip install ansible
+      yum -y install git python3-pip
+      pip3 install ansible
       if [ -d "/home/vagrant/hyrax-ansible" ]
       then
           pushd /home/vagrant/hyrax-ansible; git pull; popd
