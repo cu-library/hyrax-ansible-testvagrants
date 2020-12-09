@@ -1,6 +1,6 @@
 # hyrax-ansible-testvagrants
 
-This Vagrantfile brings up a CentOS, Debian, and Ubuntu VM to test the roles in https://github.com/cu-library/hyrax-ansible
+This Vagrantfile brings up CentOS, Debian, and Ubuntu VMs to test the roles in https://github.com/cu-library/hyrax-ansible
 Running this Vagrantfile will use 12288 MB of RAM. At least 16 GB of RAM on the host is recommend.
 
 ## CentOS 7:
@@ -11,16 +11,6 @@ Guest: 8983 -> host: http://localhost:8082
 
 http://localhost:8081/manager<br/>
 http://localhost:8081/fcrepo
-
-
-## CentOS 8:
-
-Guest: 80 -> host: http://localhost:8083<br/>
-Guest: 8080 -> host: http://localhost:8084<br/>
-Guest: 8983 -> host: http://localhost:8085
-
-http://localhost:8084/manager<br/>
-http://localhost:8084/fcrepo
 
 ## Ubuntu 18.04:
 

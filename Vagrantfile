@@ -51,54 +51,6 @@ Vagrant.configure("2") do |config|
     SHELL
   end
 
-  config.vm.define "centos8" do |centos|
-    centos.vm.box = "centos/8"
-    centos.vm.network "forwarded_port", guest: 80, host: 8083
-    centos.vm.network "forwarded_port", guest: 8080, host: 8084
-    centos.vm.network "forwarded_port", guest: 8983, host: 8085
-    centos.vm.provider "virtualbox" do |v|
-        v.memory = 2048
-        v.cpus = 2
-    end
-    centos.vm.provision "shell", inline: <<-SHELL
-      yum -y update
-      yum -y install epel-release
-      yum -y install git python3-pip
-      pip3 install ansible
-      if [ -d "/home/vagrant/hyrax-ansible" ]
-      then
-          pushd /home/vagrant/hyrax-ansible; git pull; popd
-      else
-          git clone https://github.com/cu-library/hyrax-ansible /home/vagrant/hyrax-ansible
-      fi
-      chown -R vagrant:vagrant /home/vagrant/hyrax-ansible
-      cd /home/vagrant/hyrax-ansible
-      /usr/local/bin/ansible-galaxy collection install -r requirements.yml
-      /usr/local/bin/ansible-galaxy role install -r requirements.yml
-      /usr/local/bin/ansible-playbook install_hyrax_on_localhost.yml
-      echo ""
-      echo "---> PostgreSQL Status"
-      sudo systemctl status postgresql
-      echo ""
-      echo "---> Tomcat Status"
-      sudo systemctl status tomcat
-      echo ""
-      echo "---> Redis Status"
-      sudo systemctl status redis
-      echo ""
-      echo "---> Nginx Status"
-      sudo systemctl status nginx
-      echo ""
-      echo "---> Solr Status"
-      sudo systemctl status solr
-      echo ""
-      echo "---> Node version"
-      node -v
-      echo "---> Ruby version"
-      /usr/local/bin/ruby -v
-    SHELL
-  end
-
   config.vm.define "ubuntubionic" do |ubuntu|
     ubuntu.vm.box = "ubuntu/bionic64"
     ubuntu.vm.network "forwarded_port", guest: 80, host: 8180
